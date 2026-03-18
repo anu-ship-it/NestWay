@@ -36,7 +36,7 @@ All services used are **free tier**.
 5. Replace `<password>` with your actual password
 6. Add the database name before `?`:
    ```
-   mongodb+srv://nestway-user:yourpassword@nestway.xxxxx.mongodb.net/nestway?retryWrites=true&w=majority
+   Demo
    ```
 7. **Save this string** — you'll need it in Stage 2
 
