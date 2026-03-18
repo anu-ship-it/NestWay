@@ -244,3 +244,4 @@ npm install && npm start
 
 App runs at http://localhost:3000 — fully functional with mock data,
 no MongoDB or API keys needed.
+Updated project files and environment configuration to ensure proper setup and smooth execution of the application
