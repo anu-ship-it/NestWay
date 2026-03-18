@@ -31,7 +31,7 @@ All services used are **free tier**.
 3. Driver: Node.js, Version: 4.1 or later
 4. Copy the string — it looks like:
    ```
-   mongodb+srv://nestway-user:<password>@nestway.xxxxx.mongodb.net/?retryWrites=true&w=majority
+   Demo
    ```
 5. Replace `<password>` with your actual password
 6. Add the database name before `?`:
