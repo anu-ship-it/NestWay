@@ -1,0 +1,26 @@
+# ─────────────────────────────────────────────────────────────
+#  NestWay Backend — Dockerfile
+#  Build:  docker build -t nestway-backend .
+#  Run:    docker run -p 5000:5000 --env-file .env nestway-backend
+# ─────────────────────────────────────────────────────────────
+
+# Use official Node.js LTS slim image
+FROM node:20-slim
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy package files first (layer caching — only reinstalls if package.json changes)
+COPY package*.json ./
+
+# Install production dependencies only
+RUN npm install --omit=dev
+
+# Copy the rest of the source code
+COPY . .
+
+# Expose the port Express listens on
+EXPOSE 5000
+
+# Start the server
+CMD ["node", "src/index.js"]
