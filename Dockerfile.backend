@@ -24,3 +24,4 @@ EXPOSE 5000
 
 # Start the server
 CMD ["node", "src/index.js"]
+
