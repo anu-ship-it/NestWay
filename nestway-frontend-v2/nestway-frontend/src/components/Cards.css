@@ -1,0 +1,207 @@
+/* ── Shared card shell ───────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; gap: 16px;
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+.card__header { display: flex; align-items: center; gap: 10px; }
+.card__icon   { font-size: 22px; }
+.card__title  {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  color: var(--charcoal); letter-spacing: -0.3px;
+}
+
+.card__section { display: flex; flex-direction: column; gap: 8px; }
+.card__section-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.card__tip {
+  font-size: 13px; color: var(--muted);
+  background: #FAFAF8; border-left: 3px solid var(--saffron);
+  padding: 10px 12px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: 1.5;
+}
+
+/* ── Weather ─────────────────────────────────────────────────── */
+.weather__current {
+  background: linear-gradient(135deg, var(--teal-lt), var(--white));
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+}
+.weather__temp {
+  font-family: var(--font-display);
+  font-size: 52px; font-weight: 900;
+  color: var(--teal); line-height: 1;
+}
+.weather__condition {
+  font-size: 15px; color: var(--muted);
+  margin: 6px 0 12px; text-transform: capitalize;
+}
+.weather__meta-row {
+  display: flex; justify-content: center; gap: 20px;
+  font-size: 13px; font-weight: 500; color: var(--muted);
+}
+
+.weather__months { display: flex; flex-wrap: wrap; gap: 6px; }
+.weather__month {
+  font-size: 12px; font-weight: 500;
+  padding: 4px 10px; border-radius: 99px;
+}
+.weather__month--good  { background: var(--teal-lt);    color: var(--teal-dk); }
+.weather__month--avoid { background: #FFF3CD;            color: #7A5300; }
+
+/* ── Travel ──────────────────────────────────────────────────── */
+.travel__tabs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.travel__tab {
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 500;
+  color: var(--muted);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  transition: all 0.2s;
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+}
+.travel__tab:hover { border-color: var(--teal); color: var(--teal); }
+.travel__tab--active {
+  background: var(--teal); color: var(--white);
+  border-color: var(--teal); box-shadow: var(--shadow-sm);
+}
+.travel__tab-km { font-size: 10px; opacity: 0.75; }
+
+.travel__options { display: flex; flex-direction: column; gap: 0; }
+.travel__option {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.travel__option:last-child { border-bottom: none; }
+.travel__option-left  { display: flex; align-items: center; gap: 12px; }
+.travel__option-icon  { font-size: 22px; width: 30px; flex-shrink: 0; }
+.travel__option-mode  { font-size: 13px; font-weight: 600; }
+.travel__option-name  { font-size: 12px; color: var(--muted); }
+.travel__option-right { text-align: right; }
+.travel__option-fare  { font-size: 15px; font-weight: 600; color: var(--charcoal); }
+.travel__option-dur   { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.travel__book-btn {
+  display: inline-block;
+  font-size: 11px; font-weight: 600;
+  color: var(--teal); border: 1px solid var(--teal);
+  padding: 3px 8px; border-radius: 6px;
+  transition: all 0.15s;
+}
+.travel__book-btn:hover { background: var(--teal); color: var(--white); }
+
+.travel__local { display: flex; flex-direction: column; gap: 0; }
+.travel__local-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  font-size: 14px; color: var(--ink);
+}
+.travel__local-row:last-child { border-bottom: none; }
+.travel__local-fare { font-weight: 600; color: var(--saffron); }
+
+/* ── Stay — shared ───────────────────────────────────────────── */
+.stay__list { display: flex; flex-direction: column; gap: 12px; }
+
+.stay__areas { display: flex; flex-wrap: wrap; gap: 6px; }
+.stay__area-chip {
+  font-size: 12px; font-weight: 500;
+  padding: 4px 10px; border-radius: 99px;
+  background: var(--teal-lt); color: var(--teal-dk);
+}
+
+/* Hotels */
+.stay__hotel {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 14px; border-radius: var(--radius-md);
+  border: 1px solid var(--border); background: var(--surface);
+}
+.stay__hotel-name { font-size: 15px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+.stay__hotel-area { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.stay__amenities  { display: flex; flex-wrap: wrap; gap: 4px; }
+.stay__amenity {
+  font-size: 11px; padding: 2px 8px; border-radius: 99px;
+  background: var(--border); color: var(--muted);
+}
+.stay__hotel-right { text-align: right; flex-shrink: 0; }
+.stay__hotel-type  { font-size: 11px; font-weight: 600; color: var(--saffron); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.stay__hotel-price { font-size: 15px; font-weight: 700; color: var(--charcoal); }
+.stay__hotel-per   { font-size: 11px; color: var(--muted); }
+
+/* PG */
+.stay__filter-row { display: flex; gap: 6px; }
+.stay__filter-btn {
+  padding: 5px 14px; border-radius: 99px;
+  font-size: 13px; font-weight: 500; color: var(--muted);
+  border: 1.5px solid var(--border); background: var(--white);
+  transition: all 0.15s;
+}
+.stay__filter-btn:hover { border-color: var(--teal); color: var(--teal); }
+.stay__filter-btn--active { background: var(--teal); color: var(--white); border-color: var(--teal); }
+
+.stay__pg {
+  padding: 14px; border-radius: var(--radius-md);
+  border: 1px solid var(--border); background: var(--surface);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.stay__pg-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.stay__pg-name { font-size: 15px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+.stay__verified {
+  display: inline-block; margin-left: 8px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+  background: #E8F5E9; color: #2E7D32;
+  padding: 2px 7px; border-radius: 99px;
+}
+.stay__pg-near  { font-size: 12px; color: var(--muted); }
+.stay__pg-right { text-align: right; flex-shrink: 0; }
+.stay__pg-price { font-size: 15px; font-weight: 700; color: var(--charcoal); }
+.stay__pg-per   { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+.stay__gender {
+  display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+  padding: 2px 8px; border-radius: 99px; text-transform: uppercase;
+}
+.stay__gender--boys  { background: #E3F2FD; color: #1565C0; }
+.stay__gender--girls { background: #FCE4EC; color: #AD1457; }
+.stay__gender--any   { background: var(--border); color: var(--muted); }
+
+.stay__includes { display: flex; flex-wrap: wrap; gap: 4px; }
+.stay__include-chip {
+  font-size: 11px; padding: 3px 9px; border-radius: 99px;
+  background: var(--saffron-lt); color: var(--saffron-dk); font-weight: 500;
+}
+
+/* ── Budget ──────────────────────────────────────────────────── */
+.budget__rows { display: flex; flex-direction: column; gap: 0; }
+.budget__row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+.budget__row:last-child { border-bottom: none; }
+.budget__row-icon  { font-size: 18px; width: 24px; flex-shrink: 0; }
+.budget__row-label { flex: 1; font-size: 14px; color: var(--ink); }
+.budget__row-value { font-size: 14px; font-weight: 600; color: var(--charcoal); }
+
+.budget__total {
+  display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(135deg, var(--teal-lt), var(--saffron-lt));
+  padding: 16px 18px; border-radius: var(--radius-md);
+  font-weight: 600; font-size: 15px; color: var(--charcoal);
+}
+.budget__total-value {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700; color: var(--teal);
+}
+
+.budget__food-range { font-size: 14px; color: var(--ink); }
